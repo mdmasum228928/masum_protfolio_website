@@ -60,6 +60,9 @@ img{
 .outer-shadow{
     box-shadow: var(--outer-shadow);
 }
+.inner-shadow{
+    box-shadow: var(--inner-shadow);
+}
 .hover-in-shadow{
     position: relative;
     z-index: 1;
@@ -79,7 +82,116 @@ img{
 .hover-in-shadow:hover:after{
     box-shadow: var(--inner-shadow);
 }
-
+.align-items-center{
+    align-items: center;
+}
+.btn-1{
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    background-color: transparent;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-1:after{
+    border-radius: 30px;
+}
+.effect-wrap .effect{
+    position: absolute;
+    z-index: -1;
+}
+.effect-1{
+    width: 30px;
+    height: 30px;
+    border: 4px solid #8a49ff;
+    right: 10%;
+    bottom: 10%;
+    animation: spin 10s linear infinite;
+}
+.effect-2{
+    left: 2%;
+    bottom: 20%;
+    width: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation: topBounce 3s ease-in-out infinite;
+}
+.effect-2 div{
+    height: 2px;
+    width: 3px;
+    background-color: #ff9c07;
+    margin: 0 3px 8px;
+}
+.effect-3{
+    height: 180px;
+    width: 180px;
+    border: 25px solid var(--skin-color);
+    border-radius: 50%;
+    left: 50%;
+    top: -120px;
+    animation: leftBounce 3s ease-in-out infinite;
+}
+.effect-4{
+    border-top: 30px solid transparent;
+    border-left: 30px solid #06d79c;
+    left: 30%;
+    top: 20%;
+    animation: spin 15s linear infinite;
+}
+.effect-4::before{
+    content: '';
+    border-top: 30px solid transparent;
+    border-left: 30px solid #06d79c;
+    position: absolute;
+    opacity: 0.5;
+    left: -35px;
+    top: -25px;
+}
+.effect-5{
+    height: 50px;
+    width: 50px;
+    top: 30%;
+    right: 9%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50%;
+    overflow:hidden;
+    animation: spin 10s linear infinite;
+}
+.effect-5 div{
+    width: 1px;
+    height: 100%;
+    background-color: #4dd0e1;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes topBounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+}
+@keyframes leftBounce{
+    0%,100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(25px);
+    }
+}
 /* ================== 
     global css ends
 ================== */
@@ -141,3 +253,129 @@ img{
 .header .hamburger-btn span::after{
     top: 6px;
 }
+/* header-area ends time 23.00 second ends */
+/* navigration area starts */
+.nav-menu{
+    position: fixed;
+    background-color: var(--bg-block-50);
+    padding: 0 15px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+}
+.nav-menu .close-nav-menu{
+    width: 40px;
+    height: 40px;
+    display: block;
+    font-size: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-block-600);
+    transition: all linear .3s ease;
+}
+.nav-menu .close-nav-menu:after{
+    border-radius: 50%;
+}
+.nav-menu-inner{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-menu ul{
+    padding: 15px;
+}
+.nav-menu ul li{
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.nav-menu ul li:last-child{
+    margin-bottom: 0;
+}
+.nav-menu ul li a{
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-block-700);
+    padding: 5px 30px;
+    text-transform: capitalize;
+    border-radius: 30px;
+    transition: all linear .3s ease;
+}
+.nav-menu ul li a.active{
+    color: var(--skin-color);
+}
+.nav-menu ul li a:after{
+    border-radius: 30px;
+}
+/* navigration area ends 33.25 second */
+.nav-menu .copyright-text{
+    position: absolute;
+    top: 50%;
+    font-size: 15px;
+    color: var(--text-block-600);
+    transform: translate(-50%) rotate(-90deg);
+    left: 10px;
+}
+/* copyright end 35.25 second */
+/* =========== home section area starts ====== */
+.home-section{
+    position: relative;
+}
+.home-section .full-screen{
+    padding: 50px 0;
+    min-height: 100vh;
+}
+.home-section .home-text,
+.home-section .home-img{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+.home-section .home-text p{
+    color: var(--text-block-300);
+    font-size: 18px;
+    text-transform: capitalize;
+    margin: 0;
+}
+.home-section .home-text h2{
+    font-size: 55px;
+    font-weight: 700;
+    color: var(--text-block-900);
+    margin: 0;
+}
+.home-section .home-text h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-block-700);
+    margin: 0;
+    text-transform: capitalize;
+}
+.home-section .home-img .img-box{
+    max-width: 450px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    padding: 15px;
+}
+.home-section .home-img .img-box img{
+    width: 100%;
+    border-radius: 50%;
+    border: 10px solid transparent;
+}
+.home-section .home-text .btn-1{
+    margin-top: 30px;
+}
+/* ======== home section ends ======= */
+/* class -1 ends 56.00 sec ends */
