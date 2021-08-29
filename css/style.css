@@ -364,6 +364,7 @@ img{
 }
 .home-section .home-img .img-box{
     max-width: 450px;
+    height: 450px;
     display: block;
     margin: auto;
     border-radius: 50%;
@@ -373,6 +374,7 @@ img{
     width: 100%;
     border-radius: 50%;
     border: 10px solid transparent;
+    height: 100%;
 }
 .home-section .home-text .btn-1{
     margin-top: 30px;
